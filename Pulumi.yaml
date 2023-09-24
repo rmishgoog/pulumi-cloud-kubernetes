@@ -1,0 +1,6 @@
+name: gcp-kubernetes-standard
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: standard kubernetes clusters on google cloud

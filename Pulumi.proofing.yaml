@@ -1,0 +1,15 @@
+config:
+  gcp:project: rmishra-kubernetes-playground
+  gcp:region: us-east4
+  kubernetes:cluster-mode: VPC_NATIVE
+  kubernetes:cluster-name: gke-proofing-stack
+  kubernetes:master-ipv4-cidr: 172.16.0.0/28
+  kubernetes:network: pulumi-gke-proofing-network
+  kubernetes:node-machine-type: e2-medium
+  kubernetes:nodepool-name: gke-proofing-nodepool-1
+  kubernetes:pod-cidr: 10.96.0.0/16
+  kubernetes:routingmode: REGIONAL
+  kubernetes:service-account: pulumi-cluster-agent
+  kubernetes:subnetwork: pulumi-gke-proofing-subnet-01
+  kubernetes:subnetwork-cidr: 10.18.0.0/24
+  kubernetes:svc-cidr: 192.168.0.0/20
