@@ -73,3 +73,10 @@ gke_primary_preempt_nodepool_1 = gcp.container.NodePool(resource_name=nodepool_n
                                                                                                                        service_account=gke_node_service_account.email,
                                                                                                                        disk_size_gb= 10,
                                                                                                                        oauth_scopes=["https://www.googleapis.com/auth/cloud-platform"],))
+
+
+#Additionally create a Google Cloud Storage bucket to be used by the workloads on these clusters
+storage_config = pulumi.Config("storage")
+ml_workload_bucket = gcp.storage.Bucket(resource_name=storage_config.require("bucket-name"), name=storage_config.require("bucket-name"),force_destroy=True
+                                        ,uniform_bucket_level_access=True,
+                                        location=storage_config.require("location"),storage_class="STANDARD")

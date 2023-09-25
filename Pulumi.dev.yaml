@@ -13,3 +13,5 @@ config:
   kubernetes:subnetwork: pulumi-gke-dev-subnet-01
   kubernetes:subnetwork-cidr: 10.20.0.0/24
   kubernetes:svc-cidr: 10.102.0.0/20
+  storage:bucket-name: ml-workload-multi-regional
+  storage:location: US
