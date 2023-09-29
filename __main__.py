@@ -55,9 +55,17 @@ gke_proofing_cluster = gcp.container.Cluster(resource_name=cluster_name, name=cl
         gce_persistent_disk_csi_driver_config=gcp.container.ClusterAddonsConfigGcePersistentDiskCsiDriverConfigArgs(
             enabled=True,
         ),
+        gke_backup_agent_config=gcp.container.ClusterAddonsConfigGkeBackupAgentConfigArgs(
+            enabled=False,
+        ),
     ),
     network_policy=gcp.container.ClusterNetworkPolicyArgs(
         enabled=True,
+    ),
+    monitoring_config=gcp.container.ClusterMonitoringConfigArgs(
+        managed_prometheus=gcp.container.ClusterMonitoringConfigManagedPrometheusArgs(
+            enabled=False,
+        ),
     ),
     initial_node_count=1, 
     private_cluster_config=gcp.container.ClusterPrivateClusterConfigArgs(
